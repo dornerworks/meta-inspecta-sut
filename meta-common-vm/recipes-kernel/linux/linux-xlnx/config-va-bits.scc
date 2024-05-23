@@ -1,0 +1,2 @@
+define KFEATURE_DESCRIPTION "Configure VA bits for 2021 Petalinux"
+kconf hardware config-va-bits.cfg

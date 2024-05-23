@@ -1,0 +1,2 @@
+define KFEATURE_DESCRIPTION "Add virtio-net support"
+kconf hardware virtio-net.cfg

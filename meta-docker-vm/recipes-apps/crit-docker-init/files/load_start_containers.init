@@ -1,0 +1,32 @@
+#!/bin/sh
+# chkconfig:   2345 95 95
+# description: startup script to auto load container images
+
+### BEGIN INIT INFO
+# Provides:       load_containers
+# Required-Start: docker
+# Required-Stop:
+# Should-Start:
+# Should-Stop:
+# Default-Start: 2 3 4 5
+# Default-Stop:  0 1 6
+# Description: startup script to auto load container images
+### END INIT INFO
+
+# Source function library.
+
+case "$1" in
+    start)
+        for f in /mnt/sd-mmcblk0p2/docker/containers/*.tar; do
+            cat $f | docker load
+        done
+        /etc/init.d/docker.init restart
+        docker container prune -f
+        docker-compose -f /mnt/sd-mmcblk0p2/docker/docker-compose.yml up -d
+        ;;
+    *)
+        echo $"Usage: $0 {start}"
+        exit 2
+esac
+
+exit $?

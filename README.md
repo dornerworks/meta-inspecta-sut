@@ -1,2 +1,2 @@
 # meta-inspecta-sut
-Yocto layer to create Linuxs configurations for INSPECTA SUT
+Yocto layer to create Linux configurations for INSPECTA SUT (Open Platform)

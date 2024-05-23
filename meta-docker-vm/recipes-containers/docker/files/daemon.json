@@ -1,0 +1,7 @@
+{
+    "insecure-registries": ["localhost:5000"],
+    "data-root": "/mnt/sd-mmcblk0p2/docker_data",
+    "max-concurrent-downloads": 1,
+    "mtu": 1000,
+    "network-control-plane-mtu": 1000
+}
